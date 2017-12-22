@@ -1,0 +1,93 @@
+/*
+ Theme Name:   Inglewood Primary School
+ Theme URI:    https://www.understrap.com
+ Description:  UnderStrap Child Theme
+ Author:       A-Z Web Solutions Ltd
+ Author URI:   http://www.azwebsolutions.co.nz
+ Template:     understrap
+ Version:      0.3.5
+ License: GNU General Public License v2 or later
+ License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain:  understrap-child
+ Tags: one-column, custom-menu, featured-images, theme-options, translation-ready
+ GitHub Theme URI: holger1411/understrap-child
+*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666666;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+#header {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 40px;
+}
+#header .logo-wrapper {
+    margin-top: 50px;
+}
+#header .logo {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #0C2D56;
+    font-size: 24px;
+    line-height: 26px;
+    padding-left: 115px;
+}
+#header .logo span {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: normal;
+    padding-left: 115px;
+}
+#header .logo:before {
+    background: url("images/logo.png") no-repeat;
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100px;
+    width: 100px;
+    top: -15px;
+}
+#header .right-col {
+    position: relative;
+    text-align: right;
+}
+#header .right-col .contacts-wrapper {
+    position: absolute;
+    bottom: -20px;
+    right: 15px;
+}
+#header .right-col .contacts-wrapper a {
+    color: #0C2D56;
+    font-size: 20px;
+    position: relative;
+}
+#header .right-col .contacts-wrapper a:before {
+    content: "\f095";
+    font-family: FontAwesome;
+    font-size: 18px;
+    color: #0C2D56;
+    margin-right: 5px;
+}
+#header .right-col .contacts-wrapper address {
+    margin-bottom: 0;
+    font-size: 16px;
+}
+#main-nav {
+    background-color: #439193;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+
