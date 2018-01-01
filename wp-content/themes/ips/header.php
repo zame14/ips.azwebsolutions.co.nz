@@ -49,7 +49,23 @@ $container = get_theme_mod( 'understrap_container_type' );
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
-                            [menu]
+                            <div id="ips-menu-wrapper">
+                                <div class="main-nav wrapper-fluid wrapper-navbar" id="wrapper-navbar">
+                                    <nav class="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+                                        <?php
+                                        wp_nav_menu(
+                                            array(
+                                                'theme_location' => 'primary',
+                                                'container_class' => 'collapse navbar-collapse navbar-responsive-collapse',
+                                                'menu_class' => 'nav navbar-nav',
+                                                'fallback_cb' => '',
+                                                'menu_id' => 'main-menu'
+                                            )
+                                        );
+                                        ?>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
