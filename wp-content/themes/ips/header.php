@@ -24,6 +24,7 @@ $setting = new Setting(111);
 
 <div class="hfeed site" id="page">
     <section id="header">
+        <a name="top"></a>
         <div class="container-fluid">
             <div class="row">
                 <div class="container">
@@ -38,7 +39,8 @@ $setting = new Setting(111);
                                 <a href="tel:<?=$setting->getPhone()?>"><?=$setting->getPhone()?></a>
                                 <address>33 Kelly Street, 4330, NZ</address>
                             </div>
-                            <a class="events-calendar" href="https://calendar.google.com/calendar?cid=aW5nbGV3b29kLnNjaG9vbC5uel80NTZyN3NkbmxmaG81bTZqNHI3cXZnZ2NhOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank"><span class="fa fa-calendar"></span>Events Calendar</a>
+                            <a class="events-calendar" href="<?=$setting->getCalendarLink()?>" target="_blank"><span class="fa fa-calendar"></span>Events Calendar</a>
+                            <?=cartIcons()?>
                         </div>
                     </div>
                 </div>
@@ -52,7 +54,7 @@ $setting = new Setting(111);
                     <div class="row">
                         <div class="col-xl-12 no-padding">
                             <div id="ips-menu-wrapper">
-                                <a class="events-calendar-m" href="https://calendar.google.com/calendar?cid=aW5nbGV3b29kLnNjaG9vbC5uel80NTZyN3NkbmxmaG81bTZqNHI3cXZnZ2NhOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank"><span class="fa fa-calendar"></span></a>
+                                <?=cartIcons_m()?>
                                 <div class="main-nav wrapper-fluid wrapper-navbar" id="wrapper-navbar">
                                     <nav class="site-navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
                                         <?php

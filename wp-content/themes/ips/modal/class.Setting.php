@@ -32,4 +32,8 @@ class Setting extends IPSBase
     {
         return $this->getPostMeta('stationary-list');
     }
+    public function getCalendarLink()
+    {
+        return $this->getPostMeta('calendar-link');
+    }
 }

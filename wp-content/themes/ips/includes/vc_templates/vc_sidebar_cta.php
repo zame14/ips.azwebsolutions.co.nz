@@ -34,18 +34,23 @@ function sidebarCTA($atts) {
         'image' => '',
         'title' => '',
         'message' => '',
-        'link'
+        'link' => ''
     ), $atts);
     $imageid= intval($args['image']);
     $img = wp_get_attachment_image_src($imageid, 'sidebar-cta');
     $title = $args['title'];
     $message = $args['message'];
     $newsletter = getNewsletters('', 1);
-    ($title == "School Newsletter") ? $link = $newsletter[0]->getFile() : $link = $args['link'];
+    $link = $args['link'];
+    $target = '';
+    if ($title == "School Newsletter") {
+        $link = $newsletter[0]->getFile();
+        $target = 'target="_blank"';
+    }
     $html = '
     <div class="cta-wrapper">
         <div class="title">' . $title . '</div>
-        <a href="' . $link . '" target="_blank">
+        <a href="' . $link . '" ' . $target . '>
             <div class="image-wrapper">
                 <img src="' . $img[0] . '" alt="" />
             </div>

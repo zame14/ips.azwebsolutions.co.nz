@@ -45,6 +45,15 @@ h3 {
     margin: 0 0 10px 0;
     font-size: 16px;
     text-transform: uppercase;
+    line-height: 24px;
+}
+h4 {
+    color: #000000;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 20px;
+    margin: 0;
 }
 a {
     text-decoration: none;
@@ -62,6 +71,20 @@ p {
 }
 b, strong {
     color: #000000;
+}
+img {
+    max-width: 100%;
+}
+.btn {
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 0;
+    cursor: pointer;
+}
+.btn-primary, .btn-primary:hover {
+    background-color: #40142D;
+    border-color: #40142D;
+    color: #ffffff;
 }
 .page-id-114 #main a {
     color: #666666;
@@ -173,7 +196,7 @@ b, strong {
     padding-bottom: 20px;
 }
 .page-id-166 .panel .wpb_single_image {
-    margin-bottom: 10px;
+    margin-bottom: 10px !important;
 }
 .panels-wrapper .panel.to-do .wpb_single_image, .page-id-166 .panel.to-do .wpb_single_image {
     background-color: #0073C6;
@@ -209,6 +232,9 @@ b, strong {
 }
 .spacer-60 {
     height: 60px !important;
+}
+.spacer-20 {
+    height: 20px !important;
 }
 .intro {
     margin-bottom: 0 !important;
@@ -397,6 +423,7 @@ b, strong {
     right: 0;
     margin: auto;
     font-weight: 700;
+    z-index: 1;
 }
 .home .feature {
     position: relative;
@@ -467,7 +494,7 @@ b, strong {
     line-height: 30px;
     position: relative;
     padding-left: 20px;
-    padding-right: 20px;
+    padding-right: 0;
 }
 .page-content-wrapper ul li:before {
     width: 5px;
@@ -837,7 +864,7 @@ b, strong {
 }
 .events-calendar {
     position: absolute;
-    right: 15px;
+    right: 130px;
     top: 10px;
     background-color: #ffffff;
     color: #0073C6;
@@ -846,13 +873,33 @@ b, strong {
     text-transform: uppercase;
     padding-right: 0;
 }
-.events-calendar-m {
+.cart-icons-list-m {
     display: none;
 }
 .events-calendar span {
     position: relative;
     top: -1px;
     margin-right: 10px;
+}
+.cart-icons-list {
+    position: absolute;
+    right: 15px;
+    background-color: #0C2D56;
+    top: -1px;
+}
+.cart-icons-list li {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #0C2D56;
+}
+.cart-icons-list li:first-child {
+    border-right: 1px solid #ffffff;
+}
+.cart-icons-list li a {
+    color: #ffffff;
+}
+.cart-icons-list li a.fa-shopping-cart {
+    margin-right:5px;
 }
 .beliefs-wrapper {
     padding: 15px;
@@ -909,6 +956,209 @@ b, strong {
     top: 0;
     z-index: -1;
     opacity: 0.5;
+}
+.top {
+    display: none;
+}
+.staff-wrapper .staff {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.staff-wrapper .staff h3, .staff-bio-wrapper h3 {
+    font-size: 20px;
+    color: #0C2D56;
+}
+.staff-wrapper .image-wrapper {
+    margin-bottom: 15px;
+    position: relative;
+}
+.staff-wrapper .position, .staff-bio-wrapper .position {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+.staff-bio-wrapper .position {
+    margin-bottom: 15px;
+}
+.staff-wrapper .position i {
+    color: #666666;
+    font-size: 14px;
+    font-style: normal;
+    padding-left: 5px;
+}
+.staff-wrapper .classroom {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #0073C6;
+}
+.staff-wrapper .additional-info {
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+.staff-wrapper .image-wrapper a {
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #439193;
+}
+.staff-inner-wrapper {
+    cursor: pointer;
+}
+.staff-bio-wrapper {
+    position: relative;
+    margin-bottom: 35px;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+    padding: 50px;
+}
+.staff-bio-wrapper .bio-content {
+
+}
+.loader {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    display: none;
+}
+.staff-bio-wrapper .close-me {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #000000;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 18px;
+}
+.woocommerce ul.products li.product a {
+    text-align: center;
+}
+.woocommerce ul.products li.product .price {
+    font-size: 16px;
+    color: #000000;
+}
+.btn-outline-primary {
+    border-color: #40142D;
+    color: #40142D;
+    display: block;
+}
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background-color: #40142D;
+    color: #ffffff;
+    border-color: #40142D;
+}
+.woocommerce .woocommerce-breadcrumb {
+    font-size: 14px;
+    color: #0073C6;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+}
+.woocommerce .woocommerce-breadcrumb a {
+    color: #000000;
+}
+#tab-payment-options h2 {
+    display: none;
+}
+.sitemap {
+    margin-top: 20px;
+    display: block;
+}
+.sitemap span {
+    padding-right: 5px;
+}
+.page-id-415 .wsp-container ul li a {
+    color: #666666;
+}
+.single-school-excursion .form-control {
+    display: inline-block;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-color: #666666;
+    padding-bottom: 0;
+}
+.single-school-excursion .student_name .form-control, .single-school-excursion .parents_name .form-control {
+    width: 300px;
+}
+.single-school-excursion .room .form-control {
+    width: 50px;
+}
+.single-school-excursion .form-group {
+    display: inline-block;
+}
+.single-school-excursion .permission input[type=radio] {
+    margin-right: 5px;
+}
+.single-school-excursion .permission label {
+    font-weight: 700;
+    color: #000000;
+}
+.single-school-excursion .submit-wrapper {
+    margin-top: 15px;
+}
+.single-school-excursion form {
+    margin-top: 15px;
+}
+.single-school-excursion .form-control::placeholder, .single-school-excursion .form-control::-moz-placeholder {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.payment-form-wrapper .form-group {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 5px;
+}
+.payment-form-wrapper .form-control {
+    display: inline-block;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    border-radius: 0;
+    border-color: #666666;
+    padding-bottom: 0;
+}
+.payment-form-wrapper .surname .form-control, .payment-form-wrapper .pupil_1 .form-control, .payment-form-wrapper .pupil_2 .form-control, .payment-form-wrapper .pupil_3 .form-control, .payment-form-wrapper .pupil_4 .form-control {
+    width: 300px;
+}
+.payment-form-wrapper .room_1 .form-control, .payment-form-wrapper .room_2 .form-control, .payment-form-wrapper .room_3 .form-control, .payment-form-wrapper .room_4 .form-control {
+    width: 50px;
+}
+.payment-form-wrapper label {
+    color: #000000;
+    width:130px;
+}
+.payment-form-wrapper label.rm {
+    width:30px;
+}
+.curricular-fund-wrapper label {
+    width: auto;
+    margin-right: 10px;
+    color: #666666;
+}
+.curricular-fund-wrapper .extra_curricular_junior .form-control, .curricular-fund-wrapper .extra_curricular_middle .form-control, .curricular-fund-wrapper .extra_curricular_senior .form-control, .curricular-fund-wrapper .extra_curricular_intermediate .form-control, .curricular-fund-wrapper .library_donation .form-control, .curricular-fund-wrapper .technology_fee .form-control {
+    width: 50px;
+}
+.curricular-fund-wrapper.total-amount label {
+    color: #000000 !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.kapa-haka-images-wrapper {
+    margin-bottom: 80px;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
@@ -1097,6 +1347,60 @@ b, strong {
         padding-left: 10px;
         padding-right: 10px;
     }
+    .staff-wrapper .staff h3 {
+        font-size: 16px;
+    }
+    .staff-wrapper .position {
+        font-size: 14px;
+    }
+    .staff-wrapper .classroom {
+        font-size:14px;
+    }
+    .cart-icons-list {
+        top: 0;
+    }
+    .cart-icons-list li {
+        padding: 5px 10px;
+    }
+    .kapa-haka-images-wrapper {
+        width: 70% !important;
+    }
+    .resources-wrapper {
+        width: 30% !important;
+    }
+}
+@media screen and (max-width: 860px) {
+    .cart-icons-list-m {
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 5px;
+        z-index: 99;
+        cursor: pointer;
+    }
+    .cart-icons-list-m li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+    .cart-icons-list-m li.li-user {
+        display: none;
+    }
+    .cart-icons-list-m li.li-cart {
+        display: none;
+    }
+    .cart-icons-list-m li a {
+        font-size: 16px;
+        color: #ffffff;
+    }
+    .cart-icons-list-m li a.fa-shopping-cart {
+        margin-right: 5px;
+    }
+    .cart-icons-list-m li a:hover {
+        color: #ffffff;
+    }
+    .events-calendar {
+        display: none;
+    }
 }
 @media screen and (max-width: 767px) {
     .home .feature {
@@ -1140,8 +1444,25 @@ b, strong {
     .menu-col {
         display: none;
     }
+    .top {
+        position: absolute !important;
+        z-index: 1;
+        top: -85px;
+        right: 10px;
+        font-size: 30px;
+        display: block;
+        color: #0C2D56 !important;
+    }
+    .top:hover {
+        cursor: pointer;
+        animation: bounce 1s;
+    }
 }
 @media screen and (max-width: 575px) {
+    h1 {
+        font-size: 26px;
+        line-height: 30px;
+    }
     #header .logo {
         padding-left: 0;
         font-size: 20px;
@@ -1173,27 +1494,11 @@ b, strong {
     #header .right-col {
         text-align: center;
     }
-    .events-calendar {
-        display: none;
-    }
     #header .logo::before {
         top: 13px;
         z-index: -1;
         left: 70px;
         opacity: 0.3;
-    }
-    .events-calendar-m {
-        display: block;
-        color: #ffffff;
-        position: absolute;
-        left: 15px;
-        top: 5px;
-        z-index: 9999;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .events-calendar-m:hover {
-        color: #ffffff;
     }
     .panels-wrapper {
         margin-top: 0;
@@ -1224,8 +1529,11 @@ b, strong {
         padding-right: 15px;
         padding-left: 15px;
     }
-    #copyright span {
+    #copyright i {
         display: none;
+    }
+    #copyright span {
+        display: block;
     }
     #copyright {
         line-height: 30px;
@@ -1245,5 +1553,73 @@ b, strong {
     .page-content-wrapper:after {
         width: 320px;
         height: 472px;
+    }
+    .operating-hours-wrapper p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .operating-hours-wrapper strong {
+        width: auto;
+    }
+    .page-content-wrapper .reach-wrapper ul li {
+        padding-right: 0;
+    }
+    .page-id-166 .panel.vc_col-sm-4 {
+        width:100%;
+    }
+    .beliefs-wrapper {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .newsletters li:first-child a {
+        font-size: 16px;
+    }
+    .gallery .gallery-item {
+        width: 50%;
+    }
+    #galleryModal .prev, #galleryModal .next {
+        top: 150px;
+    }
+    #galleryModal .slick-prev, #galleryModal .slick-next {
+        top: 30px;
+        transform: none;
+        -webkit-transform: none;
+    }
+    .woocommerce ul.products li.product, .woocommerce-page ul.products li.product, .woocommerce-page[class*="columns-"] ul.products li.product, .woocommerce[class*="columns-"] ul.products li.product {
+        width: 98%;
+    }
+    .cart-icons-list {
+        display: none;
+    }
+    .cart-icons-list-m li.li-user {
+        display: inline-block;
+    }
+    .cart-icons-list-m li.li-cart {
+        display: inline-block;
+    }
+    .kapa-haka-images-wrapper {
+        margin-bottom: 20px;
+    }
+    .resources-wrapper {
+        margin-bottom: 120px;
+    }
+    .single-school-excursion .student_name .form-control, .single-school-excursion .parents_name .form-control {
+        width: 100%;
+    }
+    .staff-bio-wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    .payment-form-wrapper .form-control {
+        padding-top: 0;
+        margin-bottom: 15px !important;
+    }
+    .payment-form-wrapper .surname .form-control, .payment-form-wrapper .pupil_1 .form-control, .payment-form-wrapper .pupil_2 .form-control, .payment-form-wrapper .pupil_3 .form-control, .payment-form-wrapper .pupil_4 .form-control {
+        width: 100%;
+    }
+    .page-id-166 .panel h2 {
+        display: block;
     }
 }

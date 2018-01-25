@@ -12,14 +12,14 @@
 
 get_header(); ?>
 
-    <div class="wrapper" id="page-newsletter-wrapper">
-        <div id="content" class="container">
+    <div class="wrapper" id="single-school-excursion">
+        <div id="content" class="container-fluid">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-12 no-padding">
                     <div id="primary" class="content-area">
                         <main id="main" class="site-main" role="main">
                             <?php while ( have_posts() ) : the_post(); ?>
-                                <?php get_template_part( 'loop-templates/content', 'newsletter' ); ?>
+                                <?php get_template_part( 'loop-templates/content', 'school-excursion' ); ?>
                                 <?php
                                 // If comments are open or we have at least one comment, load up the comment template
                                 if ( comments_open() || get_comments_number() ) :

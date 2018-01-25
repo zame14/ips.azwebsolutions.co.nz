@@ -2,6 +2,7 @@
 $setting = new Setting(111);
 ?>
 <footer id="footer">
+    <a class="fa fa-arrow-circle-o-up top"></a>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12">
@@ -20,6 +21,7 @@ $setting = new Setting(111);
                             </ul>
                             <a href="mailto:<?=$setting->getEmail()?>" class="email"><?=$setting->getEmail()?></a>
                             <div class="school-role">Current school role - <?=$setting->getSchoolRole()?></div>
+                            <a href="<?=get_page_link(415)?>" class="sitemap"><span class="fa fa-sitemap"></span>Sitemap</a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3 f-col-2">
                             <h3>Learning Links</h3>
@@ -39,7 +41,7 @@ $setting = new Setting(111);
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-12">
-                &copy; Copyright <?=date('Y')?> Inglewood Primary School <span>-</span> Website by: <a href="http://www.azwebsolutions.co.nz" target="_blank">A-Z Web Solutions Ltd</a></div>
+                &copy; Copyright <?=date('Y')?> Inglewood Primary School <i>-</i> <span>Website by: <a href="http://www.azwebsolutions.co.nz" target="_blank">A-Z Web Solutions Ltd</a></span></div>
             </div>
         </div>
     </div>

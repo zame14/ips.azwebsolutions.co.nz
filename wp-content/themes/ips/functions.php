@@ -3,6 +3,8 @@ require_once('modal/class.Base.php');
 require_once('modal/class.Newsletter.php');
 require_once('modal/class.Setting.php');
 require_once('modal/class.Event.php');
+require_once('modal/class.Staff.php');
+require_once('modal/class.Excursion.php');
 require_once(STYLESHEETPATH . '/includes/wordpress-tweaks.php');
 // Load custom visual composer templates
 loadVCTemplates();
@@ -91,4 +93,122 @@ function learningLinksMenu() {
     </ul>';
 
     return $html;
+}
+function getStaffMembers($category)
+{
+    $staff_members = Array();
+    $posts_array = get_posts([
+        'post_type' => 'staff-member',
+        'post_status' => 'publish',
+        'numberposts' => -1,
+        'orderby' => 'ID',
+        'order' => 'ASC',
+        'meta_query' => [
+            [
+                'key' => 'wpcf-category',
+                'value' => $category
+            ]
+        ]
+    ]);
+    foreach ($posts_array as $post) {
+        $staff = new Staff($post);
+        $staff_members[] = $staff;
+    }
+    return $staff_members;
+}
+
+function getSchoolExcursions()
+{
+    $excursions = Array();
+    $posts_array = get_posts([
+        'post_type' => 'school-excursion',
+        'post_status' => 'publish',
+        'numberposts' => -1,
+        'orderby' => 'ID',
+        'order' => 'DESC',
+        'meta_query' => [
+            [
+                'key' => 'wpcf-archive',
+                'value' => 0
+            ]
+        ]
+    ]);
+    foreach ($posts_array as $post) {
+        $excursion= new Staff($post);
+        $excursions[] = $excursion;
+    }
+    return $excursions;
+}
+
+function remove_loop_button(){
+    remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+}
+add_action('init','remove_loop_button');
+
+add_action('woocommerce_after_shop_loop_item','replace_add_to_cart');
+
+add_filter('woocommerce_product_tabs', 'rb_remove_description_tab', 98);
+
+function rb_remove_description_tab($tabs) {
+
+    unset($tabs['additional_information']);
+
+    return $tabs;
+
+}
+function replace_add_to_cart() {
+    global $product;
+    $link = $product->get_permalink();
+    echo do_shortcode('<a href="'.$link.'" class="btn btn-outline-primary">View</a>');
+}
+add_filter( 'wc_product_sku_enabled', '__return_false' );
+
+function cartIcons() {
+    $html = '
+    <ul class="cart-icons-list">
+        <li><a href="' . get_page_link(390) . '"><span class="fa fa-user"></span></a></li><li><a class="fa fa-shopping-cart" href="'. WC()->cart->get_cart_url() . '"><a class="cart-contents" href="'. WC()->cart->get_cart_url() . '" title="">' . WC()->cart->get_cart_contents_count() . '</a></a></li>
+    </ul>';
+
+    return $html;
+}
+function cartIcons_m() {
+    $html = '
+    <ul class="cart-icons-list-m">
+        <li><a class="events-calendar-m" href="https://calendar.google.com/calendar?cid=aW5nbGV3b29kLnNjaG9vbC5uel80NTZyN3NkbmxmaG81bTZqNHI3cXZnZ2NhOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank"><span class="fa fa-calendar"></span></a></li>
+        <li class="li-user"><a href="' . get_page_link(390) . '"><span class="fa fa-user"></span></a></li>
+        <li class="li-cart"><a class="fa fa-shopping-cart" href="'. WC()->cart->get_cart_url() . '"><a class="cart-contents" href="'. WC()->cart->get_cart_url() . '" title="">' . WC()->cart->get_cart_contents_count() . '</a></a></li>
+    </ul>';
+
+    return $html;
+}
+
+function getExcursionEmailRecipient() {
+    global $post;
+    $excursion = new Excursion($post);
+
+    return $excursion->getRecipient();
+}
+add_shortcode('CF7_get_excursion_email', 'getExcursionEmailRecipient');
+
+if(isset($_REQUEST['ajax']) && $_REQUEST['ajax'] == "show_staff_bio") {
+    $html = '';
+    $staff = new Staff($_REQUEST['staffid']);
+    $colid = $_REQUEST['colid'];
+    ($staff->getContent() <> "") ? $bio = $staff->getContent() : $bio = '<p>Staff bio coming soon...</p>';
+    $html .= '
+    <div class="bio-content">
+        <div class="close-me fa fa-times" onclick="closeStaffBio();"></div>
+        <div class="col-xl-12">
+            <h3>' . $staff->getTitle() . '</h3>
+            <p class="position">' . $staff->getPosition() . '</p>';
+            if($staff->getPosition2() <> "") $html .= '<p class="position pos2">' . $staff->getPosition2() . '</p>';
+            $html .= '
+            <div class="bio">
+                ' . $bio . '
+            </div>
+        </div>
+    </div>';
+
+    echo $html;
+    exit;
 }
