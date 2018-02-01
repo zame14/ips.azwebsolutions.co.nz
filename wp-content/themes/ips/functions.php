@@ -52,7 +52,7 @@ function getImageID($image_url)
 
     return $result[0]->ID;
 }
-function getNewsletters($order = 'DESC', $limit = -1) {
+function getNewsletters($type, $order = 'DESC', $limit = -1) {
     $newsletters = Array();
     $posts_array = get_posts([
         'post_type' => 'newsletter',
@@ -60,6 +60,12 @@ function getNewsletters($order = 'DESC', $limit = -1) {
         'numberposts' => $limit,
         'orderby' => 'ID',
         'order' => $order,
+        'meta_query' => [
+            [
+                'key' => 'wpcf-newsletter-type',
+                'value' => $type
+            ]
+        ]
     ]);
     foreach ($posts_array as $post) {
         $newsletter = new Newsletter($post);

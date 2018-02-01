@@ -12,4 +12,8 @@ class Newsletter extends IPSBase
     {
         return $this->getPostMeta('file');
     }
+    public function getType()
+    {
+        return $this->getPostMeta('newsletter-type');
+    }
 }

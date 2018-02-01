@@ -30,7 +30,7 @@ add_shortcode('ips_staff', function ($atts) {
         <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 staff" id="staff-' . $staff->id() . '">
             <div class="staff-inner-wrapper" data-id="' . $staff->id() . '" data-colid="' . $i . '">
                 <div class="image-wrapper">
-                    <img src="' . $staff->getImage() . '" alt="' . $staff->getTitle() . '" />';
+                    <img src="' . wp_make_link_relative($staff->getImage()) . '" alt="' . $staff->getTitle() . '" />';
                     if($staff->getEmail() <> "") {
                         $html .= '<a href="mailto:' . $staff->getEmail() . '" class="fa fa-envelope"></a>';
                     }

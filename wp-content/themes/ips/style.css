@@ -1091,7 +1091,7 @@ img {
     border-color: #666666;
     padding-bottom: 0;
 }
-.single-school-excursion .student_name .form-control, .single-school-excursion .parents_name .form-control {
+.single-school-excursion .student_name .form-control, .single-school-excursion .parents_name .form-control, .single-school-excursion .parents_email .form-control {
     width: 300px;
 }
 .single-school-excursion .room .form-control {
@@ -1159,6 +1159,12 @@ img {
 }
 .kapa-haka-images-wrapper {
     margin-bottom: 80px;
+}
+.newsletter-wrapper ul.newsletters, .newsletter-wrapper p {
+    margin-bottom: 0;
+}
+.newsletter-wrapper {
+    margin-bottom: 35px;
 }
 @media (min-width: 992px) and (max-width: 1199px) {
     #mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
@@ -1603,7 +1609,7 @@ img {
     .resources-wrapper {
         margin-bottom: 120px;
     }
-    .single-school-excursion .student_name .form-control, .single-school-excursion .parents_name .form-control {
+    .single-school-excursion .student_name .form-control, .single-school-excursion .parents_name .form-control, .single-school-excursion .parents_email .form-control {
         width: 100%;
     }
     .staff-bio-wrapper {
@@ -1621,5 +1627,8 @@ img {
     }
     .page-id-166 .panel h2 {
         display: block;
+    }
+    .other-events {
+        margin-bottom: 30px;
     }
 }

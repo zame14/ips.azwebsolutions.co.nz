@@ -40,7 +40,7 @@ function sidebarCTA($atts) {
     $img = wp_get_attachment_image_src($imageid, 'sidebar-cta');
     $title = $args['title'];
     $message = $args['message'];
-    $newsletter = getNewsletters('', 1);
+    $newsletter = getNewsletters('school','', 1);
     $link = $args['link'];
     $target = '';
     if ($title == "School Newsletter") {
